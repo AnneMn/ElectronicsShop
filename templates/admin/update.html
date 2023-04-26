@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Update Products | Anne's Shop{% endblock %}
+
+{% block body %}
+
+<div class="row pad">
+	<div class="col-lg-12">
+		<h2 class="bold text-center">Update Product </h2>
+	</div>
+</div>
+<div class="container">
+<form action="{{ url_for('update', id = product_to_update.id)}}" method="POST">
+	<h5 class="bold">Product Name</h5>
+    <input type="text" placeholder="Name" name="name" value="{{product_to_update.name}}"><br />
+	<h5 class="bold">Product Price</h5>
+	<input type="text" placeholder="Price" name="price" value="{{product_to_update.price}}"><br />
+	<h5 class="bold">Product Stock</h5>
+	<input type="text" placeholder="Stock" name="stock" value="{{product_to_update.stock}}"><br />
+	<h5 class="bold">Product Description</h5>
+	<input type="text" placeholder="Description" name="description" value="{{product_to_update.description}}"><br />
+	<h5 class="bold">Product Image</h5>
+	<input type="text" placeholder="Image" name="image" value="{{product_to_update.image}}"><br />
+	<h5 class="bold">Product Manufacturer</h5>
+	<input type="text" placeholder="Manufacturer" name="manufacturer" value="{{product_to_update.manu_name}}"><br />
+	<h5 class="bold">Product Type</h5>
+	<input type="text" placeholder="Type" name="type" value="{{product_to_update.type}}"><br />
+    <br /><input type="submit" value="Update Product" class="btn btn-secondary">
+</form>
+</div>
+{% endblock %}
